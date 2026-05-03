@@ -18,8 +18,9 @@ class CartPage extends BasePage {
     }
     
     async isOnCartPage(): Promise<boolean> {
-        const btn = await this.checkoutButton;
         try {
+            const btn = await this.checkoutButton;
+            await btn.waitForDisplayed({ timeout: 5000 });
             return await btn.isDisplayed();
         } catch (e) {
             return false;

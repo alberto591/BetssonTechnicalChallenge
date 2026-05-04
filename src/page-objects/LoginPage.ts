@@ -39,6 +39,9 @@ class LoginPage extends BasePage {
         
         return await container.getText();
     }
+    async isLoginPage(): Promise<boolean> {
+        return await (await this.usernameInput).isDisplayed();
+    }
 }
 
 export default new LoginPage();

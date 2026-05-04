@@ -3,3 +3,4 @@ allure-results/
 allure-report/
 # app/*.apk (Included for assessment convenience)
 .DS_Store
+.idea/

@@ -56,4 +56,18 @@ export default class BasePage {
     byText(text: string) {
         return $(`android=new UiSelector().text("${text}")`);
     }
+
+    /**
+     * Common Navigation Elements
+     */
+    get menuButton() { return this.byAccessibilityId('test-Menu'); }
+    get logoutLink() { return this.byAccessibilityId('test-LOGOUT'); }
+
+    async openMenu() {
+        await this.clickElement(this.menuButton);
+    }
+
+    async selectLogout() {
+        await this.clickElement(this.logoutLink);
+    }
 }

@@ -7,7 +7,9 @@ class InventoryPage extends BasePage {
     }
 
     async getHeaderTitleText(): Promise<string> {
-        return await this.getText(this.headerTitle);
+        const title = await this.headerTitle;
+        await title.waitForDisplayed({ timeout: 15000 });
+        return await title.getText();
     }
 
     // Actions
